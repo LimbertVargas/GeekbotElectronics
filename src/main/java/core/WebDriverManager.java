@@ -5,11 +5,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class WebDriverManager {
-    private WebDriver webDriver;
+public final class WebDriverManager {
+    private static WebDriver webDriver;
     private static WebDriverManager instance;
     private static WebDriverWait webDriverWait;
-    private static final String URL = "https://www.trabajopolis.bo/log-in/";
 
 
     private WebDriverManager(){
@@ -24,7 +23,7 @@ public class WebDriverManager {
     }
 
     private void initialize() {
-        this.webDriver = DriverWebFactory.getWebDriver();
+        this.webDriver = WebDriverFactory.getWebDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(DriverConfig.getInstance().getImplicitWait(), TimeUnit.SECONDS);
         webDriverWait = new WebDriverWait(webDriver, DriverConfig.getInstance().getExplicitWait());

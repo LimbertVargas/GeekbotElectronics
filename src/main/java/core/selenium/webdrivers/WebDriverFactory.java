@@ -1,5 +1,9 @@
-package core.selenium;
+package core.selenium.webdrivers;
 
+import core.selenium.Browsers;
+import core.selenium.Chrome;
+import core.selenium.FireFox;
+import core.selenium.IBrowser;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;

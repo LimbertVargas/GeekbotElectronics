@@ -1,5 +1,6 @@
-package core.selenium;
+package core.selenium.webdrivers;
 
+import core.selenium.Browsers;
 import core.selenium.utils.LoadProperties;
 
 import java.util.Properties;
@@ -11,7 +12,6 @@ public class WebDriverConfig {
     private static final String BROWSER = "browser";
     private static final String IMPLICIT_WAIT = "implicit-wait";
     private static final String EXPLICIT_WAIT = "explicit-wait";
-    private static final String SLEEP_TIME = "sleep-time";
 
     private WebDriverConfig() {
         initialize();
@@ -38,9 +38,5 @@ public class WebDriverConfig {
 
     public long getExplicitWait() {
         return Long.parseLong(properties.getProperty(EXPLICIT_WAIT));
-    }
-
-    public long getSleepWait() {
-        return Long.parseLong(properties.getProperty(SLEEP_TIME));
     }
 }

@@ -1,12 +1,12 @@
-package core;
+package core.selenium;
 
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static core.Browsers.CHROME;
-import static core.Browsers.FIREFOX;
+import static core.selenium.Browsers.CHROME;
+import static core.selenium.Browsers.FIREFOX;
 
 /**
  * This class implements the logic for select a browser.

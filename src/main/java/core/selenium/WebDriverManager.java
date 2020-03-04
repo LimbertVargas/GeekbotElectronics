@@ -7,7 +7,7 @@
  *  accordance with the terms of the license agreement you entered into
  *  with Jalasoft.
  */
-package core;
+package core.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,15 +40,15 @@ public final class WebDriverManager {
     }
 
     private void initialize() {
-        this.webDriver = WebDriverFactory.getWebDriver();
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(DriverConfig.getInstance().getImplicitWait(), TimeUnit.SECONDS);
-        webDriverWait = new WebDriverWait(webDriver, DriverConfig.getInstance().getExplicitWait());
-        webDriver.get(URL);
+        this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
+        this.webDriver.manage().window().maximize();
+        this.webDriver.manage()
+                .timeouts().implicitlyWait(WebDriverConfig.getInstance().getImplicitWait(), TimeUnit.SECONDS);
+        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitWait());
     }
 
     public WebDriver getWebDriver(){
-        return this.webDriver;
+        return webDriver;
     }
 
     public void quitWebDriver(){

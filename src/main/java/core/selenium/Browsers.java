@@ -1,4 +1,4 @@
-package core;
+package core.selenium;
 
 /**
  * This enum defines the browser Types.

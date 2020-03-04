@@ -1,4 +1,4 @@
-package core;
+package core.selenium;
 
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;

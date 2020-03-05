@@ -1,4 +1,4 @@
-package GeekbotElectronics;
+package geekbotelectronics;
 
 import core.selenium.utils.LoadProperties;
 
@@ -17,20 +17,20 @@ public class ReadAppProperties {
     }
 
     public static ReadAppProperties getInstance() {
-        if(readAppProperties == null) {
+        if (readAppProperties == null) {
             readAppProperties = new ReadAppProperties();
         }
         return readAppProperties;
     }
 
     private void initialize() {
-        mapPropertiesFile=new HashMap<>();
+        mapPropertiesFile = new HashMap<>();
         addGeekbotElectronicsProperties();
     }
 
     private void addGeekbotElectronicsProperties() {
         properties = LoadProperties.readFile(PROPERTIES_FILE);
-        properties.forEach((key, value) -> mapPropertiesFile.put(key.toString(),value.toString()));
+        properties.forEach((key, value) -> mapPropertiesFile.put(key.toString(), value.toString()));
     }
 
     public Map<String, String> getAppProperties() {

@@ -1,6 +1,5 @@
-package GeekbotElectronics;
+package geekbotelectronics;
 
-import com.sun.javafx.fxml.builder.URLBuilder;
 import core.selenium.webdrivers.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
@@ -8,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class PageTransporter {
-    private static final String URL_BASE = "http://www.geekbotelectronics.com/";
+    private static final String URL_BASE = "url-base";
     private static WebDriver webDriver;
     private static Map<String, String> endpoint = new HashMap<>();
 

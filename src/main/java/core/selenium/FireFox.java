@@ -1,5 +1,6 @@
 package core.selenium;
 
+import core.selenium.webdrivers.WebDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

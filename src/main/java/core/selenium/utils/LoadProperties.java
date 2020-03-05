@@ -1,6 +1,5 @@
 package core.selenium.utils;
 
-
 import core.utils.Logs;
 
 import java.io.FileInputStream;
@@ -12,7 +11,7 @@ public class LoadProperties {
     public static Properties readFile(final String path) {
         Properties properties = new Properties();
         try {
-            Logs.getInstance().getLog().info("Load property's files");
+            Logs.getInstance().getLog().info("Load property files...");
             InputStream inputStream = new FileInputStream(path);
             properties.load(inputStream);
         } catch (IOException e) {

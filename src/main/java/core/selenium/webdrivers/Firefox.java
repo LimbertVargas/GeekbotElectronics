@@ -1,6 +1,5 @@
-package core.selenium;
+package core.selenium.webdrivers;
 
-import core.selenium.webdrivers.WebDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @author Limbert Alvaro Vargas Laura
  * @version 0.0.1
  */
-public class FireFox implements IBrowser {
+public class Firefox implements IBrowser {
     /**
      * This method is used for configure the Firefox browser.
      *

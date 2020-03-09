@@ -1,6 +1,6 @@
 package geekbotelectronics;
 
-import core.selenium.webdrivers.WebDriverManager;
+import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;

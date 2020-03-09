@@ -1,4 +1,4 @@
-package core.selenium.webdrivers;
+package core.selenium;
 
 import java.util.Properties;
 

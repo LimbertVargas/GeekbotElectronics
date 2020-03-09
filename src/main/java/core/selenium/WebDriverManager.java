@@ -7,7 +7,7 @@
  *  accordance with the terms of the license agreement you entered into
  *  with Jalasoft.
  */
-package core.selenium.webdrivers;
+package core.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

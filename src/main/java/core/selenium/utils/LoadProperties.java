@@ -1,7 +1,5 @@
 package core.selenium.utils;
 
-import core.utils.Logs;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;

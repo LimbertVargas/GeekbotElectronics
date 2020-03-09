@@ -1,4 +1,4 @@
-package geekbotelectronics;
+package geekbotelectronics.ui;
 
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;

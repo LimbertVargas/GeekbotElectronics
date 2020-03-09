@@ -1,42 +1,41 @@
 package core.selenium.webdrivers;
 
-import core.selenium.Browsers;
-import core.selenium.utils.LoadProperties;
-
 import java.util.Properties;
 
-public class WebDriverConfig {
-    private static final String PROPERTIES_FILE = "gradle.properties";
-    private static WebDriverConfig webDriverConfig;
+public final class WebDriverConfig {
+    private int implicitWait;
+    private int explicitWait;
+    private String browserName;
     private Properties properties;
-    private static final String BROWSER = "browser";
-    private static final String IMPLICIT_WAIT = "implicit-wait";
-    private static final String EXPLICIT_WAIT = "explicit-wait";
+    private static WebDriverConfig configInstance;
 
     private WebDriverConfig() {
-        initialize();
+        properties = PropertiesReader.getProperties("webDriver.properties");
+        readProperties();
     }
 
     public static WebDriverConfig getInstance() {
-        if (webDriverConfig == null) {
-            webDriverConfig = new WebDriverConfig();
+        if (configInstance == null) {
+            configInstance = new WebDriverConfig();
         }
-        return webDriverConfig;
+        return configInstance;
     }
 
-    private void initialize() {
-        properties = LoadProperties.readFile(PROPERTIES_FILE);
+    public void readProperties() {
+        browserName = properties.getProperty("browserName");
+        implicitWait = Integer.parseInt(properties.getProperty("implicitWaitTime"));
+        explicitWait = Integer.parseInt(properties.getProperty("explicitWaitTime"));
     }
 
-    public Browsers getBrowser() {
-        return Browsers.valueOf(properties.getProperty(BROWSER).toUpperCase());
+    public String getBrowserName() {
+        return browserName;
     }
 
-    public long getImplicitWait() {
-        return Long.parseLong(properties.getProperty(IMPLICIT_WAIT));
+    public int getImplicitWait() {
+        return implicitWait;
     }
 
-    public long getExplicitWait() {
-        return Long.parseLong(properties.getProperty(EXPLICIT_WAIT));
+    public int getExplicitWait() {
+        return explicitWait;
     }
 }

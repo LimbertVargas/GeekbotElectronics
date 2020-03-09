@@ -3,7 +3,6 @@ package core.selenium.webdrivers;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 /**
  * This class implements the configuration of the Firefox browser.
@@ -18,8 +17,7 @@ public class Firefox implements IBrowser {
      * @return a WebDriver with configuration the Firefox browser.
      */
     public WebDriver initDriver() {
-        FirefoxDriverManager.getInstance().version("73.0.1").setup();
-        FirefoxOptions firefoxOptions = new FirefoxOptions();
-        return new FirefoxDriver(firefoxOptions);
+        FirefoxDriverManager.getInstance().setup();
+        return new FirefoxDriver();
     }
 }

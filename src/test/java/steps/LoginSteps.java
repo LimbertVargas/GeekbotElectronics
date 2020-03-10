@@ -1,10 +1,27 @@
 package steps;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import geekbotelectronics.ui.pages.AccountPage;
+import geekbotelectronics.ui.pages.LoginPage;
+import geekbotelectronics.utils.GeekbotElectronicsConfig;
+import org.testng.Assert;
 
 public class LoginSteps {
-    @Given("^I go to the (.*) page")
-    public void iGoToTheLoginPage() {
+    private LoginPage loginPage;
+    private AccountPage accountPage;
 
+    @When("the user login entering his email and password")
+    public void theUserLoginEnteringHisEmailAndPassword() {
+        loginPage = new LoginPage();
+        loginPage.login(GeekbotElectronicsConfig.getInstance().getCredentials("email"),
+                GeekbotElectronicsConfig.getInstance().getCredentials("password"));
+    }
+
+    @Then("Mi cuenta title is shown")
+    public void miCuentaTitleIsShown() {
+        accountPage = new AccountPage();
+        Assert.assertEquals(accountPage.getTextTitle(),"Mi cuenta","The text does not match");
     }
 }

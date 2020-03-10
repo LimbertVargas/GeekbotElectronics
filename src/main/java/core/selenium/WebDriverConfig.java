@@ -1,5 +1,7 @@
 package core.selenium;
 
+import geekbotelectronics.utils.PropertiesReader;
+
 import java.util.Properties;
 
 public final class WebDriverConfig {

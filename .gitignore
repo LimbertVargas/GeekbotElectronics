@@ -1,13 +1,10 @@
-# IntelliJ
-.idea/
-log/
-target/
-
-# Gradle
-.gradle/
+/.gradle/
+/.idea/
+/build/
 *.iml
-build/
-out/
+/out/
+/target/
+/logs/
 
 # Compiled class file
 *.class

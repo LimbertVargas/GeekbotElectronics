@@ -7,8 +7,9 @@
  *  accordance with the terms of the license agreement you entered into
  *  with Jalasoft.
  */
-package core.selenium.webdrivers;
+package core.selenium;
 
+import core.selenium.webdrivers.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,40 +22,36 @@ import java.util.concurrent.TimeUnit;
  * @version 0.0.1
  */
 public final class WebDriverManager {
-    private static WebDriver webDriver;
+    private WebDriver webDriver;
     private static WebDriverManager instance;
-    private static WebDriverWait webDriverWait;
+    private WebDriverWait webDriverWait;
 
     /**
      * Constructor of WebDriverManager
      */
-    private WebDriverManager(){
+    private WebDriverManager() {
         initialize();
     }
 
-    public static WebDriverManager getInstance(){
-        if (instance == null || instance.webDriver == null) {
+    public static WebDriverManager getInstance() {
+        if (instance == null) {
             instance = new WebDriverManager();
         }
         return instance;
     }
 
     private void initialize() {
-        this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
+        this.webDriver = BrowserFactory.getBrowser(WebDriverConfig.getInstance().getBrowserName()).initDriver();
         this.webDriver.manage().window().maximize();
         this.webDriver.manage()
                 .timeouts().implicitlyWait(WebDriverConfig.getInstance().getImplicitWait(), TimeUnit.SECONDS);
         webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitWait());
     }
 
-    public WebDriver getWebDriver(){
+    public WebDriver getWebDriver() {
         return webDriver;
     }
 
-    public void quitWebDriver(){
-        webDriver.quit();
-        webDriver = null;
-    }
     public WebDriverWait getWebDriverWait() {
         return webDriverWait;
     }

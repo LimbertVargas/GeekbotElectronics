@@ -16,7 +16,7 @@ import org.testng.annotations.AfterTest;
         plugin = {"pretty",
                 "html:target/cucumber",
                 "json:target/cucumber.json"},
-        glue = {"steps", "hooks"},
+        glue = {"steps"},
         features = {"src/test/resources/features/"},
         monochrome = true)
 public class RunnerTest extends AbstractTestNGCucumberTests {

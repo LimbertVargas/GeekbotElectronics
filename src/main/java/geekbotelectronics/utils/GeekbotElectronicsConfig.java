@@ -7,10 +7,10 @@ import java.util.Properties;
 
 public class GeekbotElectronicsConfig {
     private static GeekbotElectronicsConfig geekbotElectronicsConfig;
-    private static Properties properties;
+    private Properties properties;
     private static Logger logger;
 
-    private GeekbotElectronicsConfig() {
+    protected GeekbotElectronicsConfig() {
         properties = PropertiesReader.getProperties("geekbotelectronics.properties");
         logger = Logger.getLogger(WebDriverConfig.class.getName());
     }

@@ -19,7 +19,7 @@ public class LoginSteps {
                 GeekbotElectronicsConfig.getInstance().getCredentials("password"));
     }
 
-    @Then("Mi cuenta title is shown")
+    @Then("Return to the (.*) page")
     public void miCuentaTitleIsShown() {
         accountPage = new AccountPage();
         Assert.assertEquals(accountPage.getTextTitle(),"Mi cuenta","The text does not match");

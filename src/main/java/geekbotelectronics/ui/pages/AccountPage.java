@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AccountPage extends BasePage {
-    @FindBy(xpath = "//h1[@class='entry-title']")
-    private WebElement myAccountTitle;
+
+    @FindBy(xpath = "")
+    private WebElement InformationTitle;
 
     public String getTextTitle() {
-        return myAccountTitle.getText();
+        return InformationTitle.getText();
     }
 }

@@ -9,19 +9,19 @@ public class LoginPage extends BasePage {
     /**
      * Finds the username or email box.
      */
-    @FindBy(id = "username")
+    @FindBy(name = "email")
     private WebElement emailBox;
 
     /**
      * Finds the password box.
      */
-    @FindBy(id = "password")
+    @FindBy(name = "password")
     private WebElement passwdBox;
 
     /**
      * Finds the login button
      */
-    @FindBy(xpath = "//button[@name='login']")
+    @FindBy(xpath = "//button[@data-link-action='sign-in']")
     private WebElement AccessBtn;
 
     public void login(final String email, final String passwd) {

@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AccountPage extends BasePage {
-    @FindBy(xpath = "//h1[@class='entry-title']")
-    private WebElement myAccountTitle;
+    @FindBy(xpath = "//a[@href='https://www.nova.com.bo/datos-personales']")
+    private WebElement editInformationLink;
 
-    public String getTextTitle() {
-        return myAccountTitle.getText();
+    public void pressInformationLink() {
+        editInformationLink.click();
     }
 }

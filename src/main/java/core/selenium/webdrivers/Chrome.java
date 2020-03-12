@@ -22,7 +22,7 @@ public class Chrome implements IBrowser {
      * @return a WebDriver with configuration the Chrome browser.
      */
     public WebDriver initDriver() {
-        ChromeDriverManager.getInstance().version("80.0.3987.122").setup();
+        ChromeDriverManager.getInstance().version("80.0.3987.132").setup();
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("profile.default_content_setting_values.notifications", 2);

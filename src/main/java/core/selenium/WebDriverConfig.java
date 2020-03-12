@@ -7,6 +7,7 @@ import java.util.Properties;
 public final class WebDriverConfig {
     private int implicitWait;
     private int explicitWait;
+    private int waitSleepTime;
     private String browserName;
     private Properties properties;
     private static WebDriverConfig configInstance;

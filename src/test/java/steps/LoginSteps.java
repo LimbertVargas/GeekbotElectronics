@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -24,7 +25,7 @@ public class LoginSteps {
                 GeekbotElectronicsConfig.getInstance().getCredentials("password"));
     }
 
-    @When("go to the (.*) page")
+    @And("go to the (.*) page")
     public void returnLoginPage(final String url) {
         PageTransporter.goToPage(url);
     }
@@ -33,10 +34,9 @@ public class LoginSteps {
     public void textInTheHeaderTopMenu() {
         headerPage = new HeaderPage();
         Assert.assertEquals(headerPage.getLogoutText(), "Cerrar sesión", "There is not logout option");
-        throw new cucumber.api.PendingException();
     }
 
-    @Then("the user email appears on the datos-personales page")
+    @And("the user email appears on the datos-personales page")
     public void theUserEmailAppearsOnTheDatosPersonalesPage() {
         accountPage.pressInformationLink();
         informationPage = new InformationPage();

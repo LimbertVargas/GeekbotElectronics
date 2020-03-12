@@ -1,11 +1,11 @@
 package steps;
 
-import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 import geekbotelectronics.ui.PageTransporter;
 
 public class CommonSteps {
-    @Given("the user goes to the (.*) page")
-    public void iGoToTheLoginPage(final String url) {
+    @When("the user goes to (.*) page")
+    public void loginPage(final String url) {
         PageTransporter.goToPage(url);
     }
 }

@@ -9,6 +9,7 @@ public abstract class TransporterHelper {
     static {
         URL_SUFFIX.put("login", "iniciar-sesion");
         URL_SUFFIX.put("mi-cuenta","mi-cuenta");
+        URL_SUFFIX.put("datos-personales","datos-personales");
     }
 
     public static String getUrl(final String url) {

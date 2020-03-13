@@ -1,10 +1,10 @@
-.gradle/
-.idea
-build
+/.gradle/
+/.idea
+/build
 *.iml
-out/
-target/
-logs/
+/out/
+/target/
+/logs/
 
 # Compiled class file
 *.class

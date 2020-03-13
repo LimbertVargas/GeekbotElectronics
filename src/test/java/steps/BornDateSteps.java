@@ -13,8 +13,8 @@ public class BornDateSteps {
     @And("the user adds a born date and the password")
     public void addsABornDate() {
         addBornDatePage = new AddBornDatePage();
-        addBornDatePage.saveForm(GeekbotElectronicsConfig.getInstance().getCredentials("password"),
-                GeekbotElectronicsConfig.getInstance().getCredentials("bornDate"));
+        addBornDatePage.saveForm(GeekbotElectronicsConfig.getInstance().getCredentials("bornDate"),
+                GeekbotElectronicsConfig.getInstance().getCredentials("password"));
     }
 
     @And("the born date appears on information page")

@@ -9,7 +9,15 @@ public class InformationPage extends BasePage {
     private WebElement emailTextBox;
 
     @FindBy(xpath = "//input[@name='birthday']")
-    private  WebElement bornDateBox;
+    private WebElement bornDateBox;
+
+    //@FindBy(xpath = "//li[text()='Información actualizada correctamente.']")
+    @FindBy(xpath = "//li[contains(text(),'actualizada correctamente.')]")
+    private static WebElement alertText;
+
+    public static WebElement getAlertText() {
+        return alertText;
+    }
 
     public String getEmailText() {
         return emailTextBox.getAttribute("value");
@@ -19,4 +27,7 @@ public class InformationPage extends BasePage {
         return bornDateBox.getAttribute("value");
     }
 
+    public boolean isInformationUpdated() {
+        return alertText.getText().contains("actualizada correctamente.");
+    }
 }

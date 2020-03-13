@@ -25,19 +25,20 @@ public class LoginSteps {
                 GeekbotElectronicsConfig.getInstance().getCredentials("password"));
     }
 
-    @And("go to the (.*) page")
+    @When("go to the (.*) page")
     public void returnLoginPage(final String url) {
         PageTransporter.goToPage(url);
     }
 
-    @Then("CERRAR SESIÓN is in the header-top menu")
+    @Then("CERRAR SESION is in the header-top menu")
     public void textInTheHeaderTopMenu() {
         headerPage = new HeaderPage();
-        Assert.assertEquals(headerPage.getLogoutText(), "Cerrar sesión", "There is not logout option");
+        Assert.assertTrue(headerPage.logoutIsVisible());
     }
 
-    @And("the user email appears on the datos-personales page")
+    @Then("the user email appears on the datos-personales page")
     public void theUserEmailAppearsOnTheDatosPersonalesPage() {
+        accountPage = new AccountPage();
         accountPage.pressInformationLink();
         informationPage = new InformationPage();
         Assert.assertEquals(informationPage.getEmailText(), GeekbotElectronicsConfig.getInstance().getCredentials("email"));
